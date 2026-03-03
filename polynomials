@@ -1,0 +1,7 @@
+import numpy as np
+coefficients_str = input()
+x_str = input()
+coefficients = list(map(float, coefficients_str.split()))
+x = float(x_str)
+result = np.polyval(coefficients, x)
+print(result)

@@ -1,0 +1,8 @@
+def wrapper(f):
+    def fun(l):
+        formatted_numbers = []
+        for n in l:
+            digits = n[-10:]
+            formatted_numbers.append(f"+91 {digits[:5]} {digits[5:]}")
+        f(formatted_numbers)
+    return fun

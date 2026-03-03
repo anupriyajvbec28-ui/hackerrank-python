@@ -1,0 +1,25 @@
+import numpy as np
+
+def calculate_determinant():
+   
+    try:
+        n = int(input())
+    except ValueError:
+        return
+    matrix_elements = []
+    for _ in range(n):
+        try:
+            row = list(map(float, input().split()))
+            if len(row) != n:
+                continue 
+            matrix_elements.extend(row)
+        except ValueError:
+            continue
+    if len(matrix_elements) != n * n:
+        return
+    a = np.array(matrix_elements).reshape(n, n)
+    determinant = np.linalg.det(a)
+    print(round(determinant, 2))
+
+if __name__ == "__main__":
+    calculate_determinant()
